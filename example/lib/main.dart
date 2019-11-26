@@ -33,6 +33,20 @@ class _WebViewExampleState extends State<WebViewExample> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Title'),
+          ),
+          body: WebView(
+            initialUrl: 'http://wx.shuazhibo.com/home/ThirdLogin?uid=18600712214&pwd=112233&url=http://wx.shuazhibo.com/index',
+            javascriptMode: JavascriptMode.unrestricted,
+            allowsInlineMediaPlayback: true,
+          ),
+        );
+      }
+/*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +62,7 @@ class _WebViewExampleState extends State<WebViewExample> {
       // to allow calling Scaffold.of(context) so we can show a snackbar.
       body: Builder(builder: (BuildContext context) {
         return WebView(
-          initialUrl: 'https://flutter.dev',
+          initialUrl: 'http://wx.shuazhibo.com/home/ThirdLogin?uid=18600712214&pwd=112233&url=http://wx.shuazhibo.com/index',
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
@@ -72,6 +86,7 @@ class _WebViewExampleState extends State<WebViewExample> {
       floatingActionButton: favoriteButton(),
     );
   }
+  */
 
   JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
     return JavascriptChannel(
